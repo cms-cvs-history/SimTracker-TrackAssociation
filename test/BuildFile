@@ -1,0 +1,20 @@
+<use name=FWCore/Framework>
+<use name=DataFormats/Common>
+<use name=FWCore/ParameterSet>
+<use name=SimTracker/TrackerHitAssociation>
+<use name=SimTracker/TrackAssociation>
+<use name=SimDataFormats/TrackerDigiSimLink>
+<use name=SimDataFormats/TrackerAnalysis>
+<use name=Geometry/TrackerGeometryBuilder>
+<use name=Geometry/Records>
+<use name=DataFormats/Math>
+<use name=clhep>
+<use name=boost>
+<use name=root>
+
+
+<library file="*.cc" name=SimTrackerTrackAssociationTestModules>
+<flags  SEAL_PLUGIN_NAME="SimTrackerTrackAssociationTestModules">
+</library>
+
+
