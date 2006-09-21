@@ -16,8 +16,8 @@
 <use name=root>
 
 
-<library file="*.cc" name=SimTrackerTrackAssociationTestModules>
-<flags  SEAL_PLUGIN_NAME="SimTrackerTrackAssociationTestModules">
+<library file="testTrackAssociator.cc" name=testTrackAssociator>
+<flags  SEAL_PLUGIN_NAME="testTrackAssociator">
 </library>
 
 
