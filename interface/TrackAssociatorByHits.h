@@ -1,47 +1,49 @@
-#ifndef TrackAssociation_TrackAssociatorByHits_h
-#define TrackAssociation_TrackAssociatorByHits_h
+#ifndef TrackAssociatorByHits_h
+#define TrackAssociatorByHits_h
 
-#include "SimTracker/TrackAssociation/interface/TrackAssociatorByHits.h"
-#include "SimTracker/TrackAssociation/interface/TrackAssociator.h"
-#include "DataFormats/TrackingRecHit/interface/TrackingRecHit.h"
-#include "SimTracker/TrackerHitAssociation/interface/TrackerHitAssociator.h"
-
+#include "FWCore/Framework/interface/Frameworkfwd.h"
 #include "FWCore/Framework/interface/Event.h"
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "FWCore/Framework/interface/Handle.h"
 #include "FWCore/Framework/interface/ESHandle.h"
+#include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "DataFormats/Common/interface/EDProduct.h"
+#include "DataFormats/Common/interface/Ref.h"
+#include "SimTracker/TrackerHitAssociation/interface/TrackerHitAssociator.h"
 
-class TrackAssociator;
-class Track;
-class TrackingParticle;
-//class SimTrack;
+//reco track
+#include "DataFormats/TrackReco/interface/TrackFwd.h"
+#include "DataFormats/TrackReco/interface/Track.h"
+#include "DataFormats/TrackingRecHit/interface/TrackingRecHit.h"
+//TrackingParticle
+#include "SimDataFormats/TrackingAnalysis/interface/TrackingParticle.h"
+#include "SimDataFormats/EncodedEventId/interface/EncodedEventId.h"
+#include "SimTracker/TrackAssociation/interface/TrackAssociatorBase.h"
 
-class TrackAssociatorByHits : public TrackAssociator {
+/* class Track; */
+/* class ParticleTrack; */
+
+class TrackAssociatorByHits : public TrackAssociatorBase {
   
  public:
-  //typedef edm::AssociationMap<edm::OneToMany<edm::ParticleTrackContainer, reco::TrackCollection, unsigned int> > SimToRecoCollection;  
-  //typedef edm::AssociationMap<edm::OneToMany<reco::TrackCollection, edm::ParticleTrackContainer, unsigned int> > RecoToSimCollection;  
+  explicit TrackAssociatorByHits( const edm::ParameterSet& );  
+  ~TrackAssociatorByHits();
   
-  /* Constructor */
-  /* Need to pass the event in the constructor. Will be modified once TrackingParticle is final */
-  TrackAssociatorByHits(const edm::Event& e, const edm::ParameterSet& conf);
-  
-  virtual ~TrackAssociatorByHits (){} 
-  
-  //method
-  void  AssociateByHitsRecoTrack(const reco::TrackCollection& tC,
-				 const float minFractionOfHits = 0.);
-  
- private:
-  const edm::Event& myEvent_; 
-  const edm::ParameterSet& conf_;
-  std::vector<unsigned int> matchedIds; 
-  const float theMinHitFraction;    
-  TrackerHitAssociator* associate;
-  const TrackingParticleCollection *tPC;
+/* Associate SimTracks to RecoTracks By Hits */
 
+  reco::RecoToSimCollection associateRecoToSim (edm::Handle<reco::TrackCollection>&, 
+						edm::Handle<TrackingParticleCollection>&, 
+						const edm::Event * event = 0) const;
+  
+  reco::SimToRecoCollection associateSimToReco (edm::Handle<reco::TrackCollection>&, 
+						edm::Handle<TrackingParticleCollection>&, 
+						const edm::Event * event = 0) const;
+ 
+ private:
+  // ----- member data
+  const edm::ParameterSet& conf_;
+  const double theMinHitFraction;    
+  int LayerFromDetid(const DetId&) const;
 };
 
-#endif // TrackAssociation_TrackAssociatorByHits_h
-
+#endif

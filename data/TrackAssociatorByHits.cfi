@@ -1,0 +1,21 @@
+es_module = TrackAssociatorByHitsESProducer 
+{
+    bool associateStrip = true
+    bool associatePixel = true
+    bool associateRecoTracks = true
+    double MinHitFraction = 0.5
+    vstring ROUList = {
+	#For running only strip or pixel comment out the appropriate strings
+	#TIB
+	"TrackerHitsTIBLowTof","TrackerHitsTIBHighTof",
+	#TID
+	"TrackerHitsTIDLowTof","TrackerHitsTIDHighTof",
+	#TOB
+	"TrackerHitsTOBLowTof","TrackerHitsTOBHighTof",
+	#TEC
+	"TrackerHitsTECLowTof","TrackerHitsTECHighTof",
+	#BPIX
+	"TrackerHitsPixelBarrelLowTof","TrackerHitsPixelBarrelHighTof",
+	#FPIX
+	"TrackerHitsPixelEndcapLowTof","TrackerHitsPixelEndcapHighTof"}
+}
