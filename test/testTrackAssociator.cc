@@ -58,7 +58,7 @@ void testTrackAssociator::analyze(const edm::Event& event, const edm::EventSetup
   const SimVertexContainer simVC = *(simVertexCollection.product());
 
   edm::Handle<TrackingParticleCollection>  TPCollectionH ;
-  event.getByLabel("trackingParticles",TPCollectionH);
+  event.getByLabel("trackingtruth","TrackTruth",TPCollectionH);
   const TrackingParticleCollection tPC   = *(TPCollectionH.product());
 
   cout << "\nEvent ID = "<< event.id() << endl ;
@@ -156,7 +156,7 @@ void testTrackAssociator::analyze(const edm::Event& event, const edm::EventSetup
 
 
 
-#include "FWCore/PluginManager/interface/ModuleDef.h"
+#include "PluginManager/ModuleDef.h"
 #include "FWCore/Framework/interface/MakerMacros.h"
 DEFINE_SEAL_MODULE();
 DEFINE_ANOTHER_FWK_MODULE(testTrackAssociator);
