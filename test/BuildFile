@@ -17,7 +17,7 @@
 
 
 <library file="testTrackAssociator.cc" name=testTrackAssociator>
-<flags EDM_PLUGIN=1>
+<flags  SEAL_PLUGIN_NAME="testTrackAssociator">
 </library>
 
 
