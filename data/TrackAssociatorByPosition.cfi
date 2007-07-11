@@ -1,0 +1,9 @@
+es_module = TrackAssociatorByPositionESProducer
+{
+	string propagator ="SteppingHelixPropagatorAny"
+	bool MinIfNoMatch = false
+	#string method = "chi2"
+	string method = "dr"
+	double QminCut = 120 
+	double QCut = 10
+}
