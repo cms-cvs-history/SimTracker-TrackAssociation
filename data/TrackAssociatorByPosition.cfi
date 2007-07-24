@@ -1,9 +1,17 @@
 es_module = TrackAssociatorByPositionESProducer
 {
+	string ComponentName = "TrackAssociatorByPosition"
 	string propagator ="SteppingHelixPropagatorAny"
 	bool MinIfNoMatch = false
-	#string method = "chi2"
-	string method = "dr"
+	#use a chi2 estimation on the 5x5 local parameters and errors in a plane in the muon system
+	#	string method = "chi2"
+	#use the distance between state in a plane in the muon system
+	#	string method = "dist"
+	#use the delta eta-phi estimator on the momentum at a plane in the muon system
+	#	string method = "momdr"
+	#use the delta eta-phi estimator on the position at a plane in the muon system
+	#	string method = "posdr"
+
 	double QminCut = 120 
 	double QCut = 10
 }
