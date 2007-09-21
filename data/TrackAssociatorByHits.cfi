@@ -3,7 +3,8 @@ es_module = TrackAssociatorByHitsESProducer
     bool associateStrip = true
     bool associatePixel = true
     bool associateRecoTracks = true
-    double MinHitFraction = 0.5
+    bool AbsoluteNumberOfHits = false
+    double MinHitCut = 0.5
     vstring ROUList = {
 	#For running only strip or pixel comment out the appropriate strings
 	#TIB
