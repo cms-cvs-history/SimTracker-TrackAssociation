@@ -2,6 +2,8 @@ es_module TrackAssociatorByPosition = TrackAssociatorByPositionESProducer
 {
 	string ComponentName = "TrackAssociatorByPosition"
 	string propagator ="SteppingHelixPropagatorAny"
+	# minimum distance from the origin to find a hit from a simulated particle and match it to reconstructed track
+	double positionMinimumDistance = 0
 	bool MinIfNoMatch = false
 	#use a chi2 estimation on the 5x5 local parameters and errors in a plane in the muon system
 	#	string method = "chi2"
