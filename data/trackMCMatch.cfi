@@ -1,0 +1,7 @@
+module trackMCMatch = GenParticleMatchMerger {
+  VInputTag src = { 
+    ctfWithMaterialTrackMCMatch, 
+    standAloneMuonsMCMatch,
+    globalMuonsMCMatch 
+  }
+}
