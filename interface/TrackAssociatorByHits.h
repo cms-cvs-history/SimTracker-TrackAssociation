@@ -19,9 +19,6 @@
 #include "SimDataFormats/EncodedEventId/interface/EncodedEventId.h"
 #include "SimTracker/TrackAssociation/interface/TrackAssociatorBase.h"
 
-/* class Track; */
-/* class ParticleTrack; */
-
 class TrackAssociatorByHits : public TrackAssociatorBase {
   
  public:
@@ -37,6 +34,24 @@ class TrackAssociatorByHits : public TrackAssociatorBase {
   reco::SimToRecoCollection associateSimToReco (edm::Handle<reco::TrackCollection>&, 
 						edm::Handle<TrackingParticleCollection>&, 
 						const edm::Event * event = 0) const;
+
+  reco::RecoToSimCollectionSeed associateRecoToSim (edm::Handle<TrajectorySeedCollection >&, 
+						    edm::Handle<TrackingParticleCollection>&, 
+						    const edm::Event * event = 0) const;
+  
+  reco::SimToRecoCollectionSeed associateSimToReco (edm::Handle<TrajectorySeedCollection >&, 
+						    edm::Handle<TrackingParticleCollection>&, 
+						    const edm::Event * event = 0) const;
+
+  void getMatchedIds(std::vector< SimHitIdpr>&, 
+		     int&, 
+		     edm::OwnVector<TrackingRecHit>::const_iterator,
+		     edm::OwnVector<TrackingRecHit>::const_iterator,
+		     TrackerHitAssociator*) const;
+  
+  int getShared(std::vector< SimHitIdpr>&, 
+		std::vector<SimHitIdpr>&,
+		TrackingParticleCollection::const_iterator) const;
 
  
  private:
