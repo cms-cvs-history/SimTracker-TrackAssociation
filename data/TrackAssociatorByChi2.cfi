@@ -1,4 +1,5 @@
 es_module = TrackAssociatorByChi2ESProducer {
     double chi2cut = 25
     bool onlyDiagonal = false
+    InputTag beamSpot = offlineBeamSpot
 }
