@@ -1,13 +1,13 @@
-include "SimTracker/TrackAssociation/data/ctfWithMaterialTrackMCMatch.cfi" 
+include "SimTracker/TrackAssociation/data/trackMCMatch.cfi" 
 include "SimTracker/TrackAssociation/data/standAloneMuonsMCMatch.cfi" 
 include "SimTracker/TrackAssociation/data/globalMuonsMCMatch.cfi" 
-include "SimTracker/TrackAssociation/data/trackMCMatch.cfi" 
+include "SimTracker/TrackAssociation/data/allTrackMCMatch.cfi" 
 
 sequence trackMCMatchSequence = {
-  ctfWithMaterialTrackMCMatch, 
+  trackMCMatch, 
   standAloneMuonsMCMatch, 
   globalMuonsMCMatch, 
 
 # merge all the above track match maps
-  trackMCMatch
+  allTrackMCMatch
 }
