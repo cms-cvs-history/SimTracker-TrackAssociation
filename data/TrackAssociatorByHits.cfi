@@ -8,7 +8,7 @@ es_module = TrackAssociatorByHitsESProducer
     double MinHitCut = 0.5
     bool UsePixels = true
     bool UseGrouped = true
-    bool UseSplitting = false
+    bool UseSplitting = true
     bool ThreeHitTracksAreSpecial = true
     vstring ROUList = {
 	#For running only strip or pixel comment out the appropriate strings
