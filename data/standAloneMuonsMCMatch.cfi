@@ -1,6 +1,6 @@
 module standAloneMuonsMCMatch = MCTrackMatcher {
   InputTag tracks = standAloneMuons
   InputTag genParticles = genParticles
-  InputTag trackingParticles = trackingtruthprod
+  InputTag trackingParticles = mergedtruth:MergedTrackTruth
   string associator = "TrackAssociatorByHits"
 }

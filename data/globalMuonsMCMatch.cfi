@@ -1,6 +1,6 @@
 module globalMuonsMCMatch = MCTrackMatcher {
   InputTag tracks = globalMuons
   InputTag genParticles = genParticles
-  InputTag trackingParticles = trackingtruthprod
+  InputTag trackingParticles = mergedtruth:MergedTrackTruth
   string associator = "TrackAssociatorByHits"
 }

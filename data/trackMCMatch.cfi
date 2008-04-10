@@ -1,6 +1,6 @@
 module trackMCMatch = MCTrackMatcher {
   InputTag tracks = generalTracks
   InputTag genParticles = genParticles
-  InputTag trackingParticles = trackingtruthprod
+  InputTag trackingParticles = mergedtruth:MergedTrackTruth
   string associator = "TrackAssociatorByHits"
 }
