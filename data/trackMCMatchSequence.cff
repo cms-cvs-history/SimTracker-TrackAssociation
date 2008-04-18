@@ -2,7 +2,7 @@ include "SimTracker/TrackAssociation/data/trackMCMatch.cfi"
 include "SimTracker/TrackAssociation/data/standAloneMuonsMCMatch.cfi" 
 include "SimTracker/TrackAssociation/data/globalMuonsMCMatch.cfi" 
 include "SimTracker/TrackAssociation/data/allTrackMCMatch.cfi" 
-include "SimTracker/TrackAssociation/data/TrackAssociatorEDProducer.cfi" 
+include "SimTracker/TrackAssociation/data/trackingParticleRecoTrackAsssociation.cff"
 
 sequence trackMCMatchSequence = {
     trackMCMatch, 
@@ -10,6 +10,8 @@ sequence trackMCMatchSequence = {
     globalMuonsMCMatch, 
     # merge all the above track match maps
     allTrackMCMatch,
-    # produce association maps for validation
-    trackAssociation
+    # produce association maps between tracking particles and recoTracks
+    trackingParticleRecoTrackAsssociation,
+    assoc2secStepTk,
+    assoc2thStepTk
 }

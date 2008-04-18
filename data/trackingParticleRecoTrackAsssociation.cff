@@ -1,0 +1,9 @@
+include "SimTracker/TrackAssociation/data/trackingParticleRecoTrackAsssociation.cfi"
+
+module assoc2secStepTk = trackingParticleRecoTrackAsssociation from "SimTracker/TrackAssociation/data/TrackingParticleRecoTrackAsssociation.cfi"
+replace assoc2secStepTk.label_tr = secStep
+
+module assoc2thStepTk = trackingParticleRecoTrackAsssociation from "SimTracker/TrackAssociation/data/TrackingParticleRecoTrackAsssociation.cfi"
+replace assoc2thStepTk.label_tr = thStep
+
+

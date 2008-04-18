@@ -1,0 +1,6 @@
+ module trackingParticleRecoTrackAsssociation = TrackAssociatorEDProducer{
+         InputTag label_tr = generalTracks
+         InputTag label_tp = mergedtruth:MergedTrackTruth
+         string associator = "TrackAssociatorByHits"
+    }
+
