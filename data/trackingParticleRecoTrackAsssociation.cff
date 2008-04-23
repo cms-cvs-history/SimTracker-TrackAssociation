@@ -6,4 +6,7 @@ replace assoc2secStepTk.label_tr = secStep
 module assoc2thStepTk = trackingParticleRecoTrackAsssociation from "SimTracker/TrackAssociation/data/trackingParticleRecoTrackAsssociation.cfi"
 replace assoc2thStepTk.label_tr = thStep
 
+module assoc2GsfTracks = trackingParticleRecoTrackAsssociation from "SimTracker/TrackAssociation/data/trackingParticleRecoTrackAsssociation.cfi"
+replace assoc2GsfTracks.label_tr = pixelMatchGsfFit
+
 

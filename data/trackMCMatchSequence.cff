@@ -13,5 +13,6 @@ sequence trackMCMatchSequence = {
     # produce association maps between tracking particles and recoTracks
     trackingParticleRecoTrackAsssociation,
     assoc2secStepTk,
-    assoc2thStepTk
+    assoc2thStepTk,
+    assoc2GsfTracks
 }
