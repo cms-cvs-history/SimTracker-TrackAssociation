@@ -4,6 +4,7 @@ include "SimTracker/TrackAssociation/data/globalMuonsMCMatch.cfi"
 include "SimTracker/TrackAssociation/data/allTrackMCMatch.cfi" 
 include "SimTracker/TrackAssociation/data/trackingParticleRecoTrackAsssociation.cff"
 
+
 sequence trackMCMatchSequence = {
     trackMCMatch, 
     standAloneMuonsMCMatch, 
@@ -14,5 +15,8 @@ sequence trackMCMatchSequence = {
     trackingParticleRecoTrackAsssociation,
     assoc2secStepTk,
     assoc2thStepTk,
-    assoc2GsfTracks
+    assoc2GsfTracks,
+    assocOutInConversionTracks,
+    assocInOutConversionTracks
+
 }
