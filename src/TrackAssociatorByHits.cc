@@ -244,6 +244,16 @@ TrackAssociatorByHits::associateSimToReco(edm::RefToBaseVector<reco::Track>& tC,
 	//<< " nshared = " << nshared << " nrechit = " << ri;
 	if (quality>theMinHitCut && !(ThreeHitTracksAreSpecial && totsimhit==3 && nshared<3) ) {
 	  //if a track has just 3 hits we require that all 3 hits are shared
+
+	  //patch for "single muon" bug
+	  if (ri>13&&((double)ri)/((double)totsimhit)>1.6){
+	  LogTrace("TrackAssociator") << "TrackingParticle number " << tpindex << " with #hits=" << nsimhit 
+				      << " re-counted = "  << totsimhit << " nshared = " << nshared 
+				      << " NOT associated with quality =" 
+				      << quality << " because of the 'single muon' bug";
+	    continue;
+	  }
+
 	  outputCollection.insert(edm::Ref<TrackingParticleCollection>(TPCollectionH, tpindex), 
 				  std::make_pair(tC[tindex],quality));
 	  LogTrace("TrackAssociator") << "TrackingParticle number " << tpindex << " with #hits=" << nsimhit 
