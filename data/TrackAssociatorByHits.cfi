@@ -1,6 +1,5 @@
-es_module TrackAssociatorByHits = TrackAssociatorByHitsESProducer 
+es_module = TrackAssociatorByHitsESProducer 
 {
-    string ComponentName = "TrackAssociatorByHits"
     bool associateStrip = true
     bool associatePixel = true
     bool associateRecoTracks = true
