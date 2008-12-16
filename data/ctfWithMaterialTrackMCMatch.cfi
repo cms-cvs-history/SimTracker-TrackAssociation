@@ -1,6 +1,0 @@
-module ctfWithMaterialTrackMCMatch = MCTrackMatcher {
-  InputTag tracks = ctfWithMaterialTracks
-  InputTag genParticles = genParticles
-  InputTag trackingParticles = mergedtruth:MergedTrackTruth
-  string associator = "TrackAssociatorByHits"
-}
