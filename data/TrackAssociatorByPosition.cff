@@ -1,7 +1,0 @@
-# a propagator
-include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorAny.cfi"
-
-# global tracking geometry
-include "Geometry/CommonDetUnit/data/globalTrackingGeometry.cfi"
-
-include "SimTracker/TrackAssociation/data/TrackAssociatorByPosition.cfi"

@@ -1,7 +1,0 @@
-module allTrackMCMatch = GenParticleMatchMerger {
-  VInputTag src = { 
-    trackMCMatch, 
-    standAloneMuonsMCMatch,
-    globalMuonsMCMatch 
-  }
-}
