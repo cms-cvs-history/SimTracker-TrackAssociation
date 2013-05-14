@@ -39,6 +39,11 @@ class TrackerHitAssociator;
  *
  * associateStrip - bool - Passed on to the hit associator.
  *
+ * requireStoredHits - bool - Whether or not to insist all TrackingParticles have at least one PSimHit. The PSimHits are not required
+ * for the association, but the old TrackAssociatorByHits still had this requirement. Storing PSimHits in the TrackingParticle is now
+ * optional (see TrackingTruthAccumulator which replaces TrackingTruthProducer). Having requireStoredHits set to true will mean no
+ * TrackingParticles will be associated if you have chosen not to store the hits. The flag is only kept in order to retain the old
+ * behaviour which can give very slightly different results.
  *
  * Note that the TrackAssociatorByHits parameters UseGrouped and UseSplitting are not used.
  *

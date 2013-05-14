@@ -248,7 +248,7 @@ reco::SimToRecoCollection QuickTrackAssociatorByHits::associateSimToRecoImplemen
 				// various things.  I'm not sure what these checks are for but they depend on the UseGrouping and UseSplitting settings.
 				// This associator works as though both UseGrouping and UseSplitting were set to true, i.e. just counts the number of
 				// hits in the tracker.
-				numberOfSimulatedHits=trackingParticleRef->trackPSimHit(DetId::Tracker).size();
+				numberOfSimulatedHits=trackingParticleRef->numberOfTrackerHits();
 			}
 
 			double purity=static_cast<double>(numberOfSharedHits)/static_cast<double>(numberOfValidTrackHits);
@@ -291,7 +291,7 @@ template<typename iter> std::vector< std::pair<edm::Ref<TrackingParticleCollecti
 		else pTrackingParticle=&(*pTrackingParticleCollectionHandle_->product())[i];
 
 		// Ignore TrackingParticles with no hits
-		if( pTrackingParticle->trackPSimHit().empty() ) continue;
+		if( pTrackingParticle->numberOfHits()==0 ) continue;
 
 		size_t numberOfAssociatedHits=0;
 		// Loop over all of the sim track identifiers and see if any of them are part of this TrackingParticle. If they are, add
@@ -518,7 +518,7 @@ QuickTrackAssociatorByHits::associateSimToReco(edm::Handle<edm::View<TrajectoryS
 	      // various things.  I'm not sure what these checks are for but they depend on the UseGrouping and UseSplitting settings.
 	      // This associator works as though both UseGrouping and UseSplitting were set to true, i.e. just counts the number of
 	      // hits in the tracker.
-	      numberOfSimulatedHits=trackingParticleRef->trackPSimHit(DetId::Tracker).size();
+	      numberOfSimulatedHits=trackingParticleRef->numberOfTrackerHits();
 	    }
 	  
 	  double purity=static_cast<double>(numberOfSharedHits)/static_cast<double>(numberOfValidTrackHits);
